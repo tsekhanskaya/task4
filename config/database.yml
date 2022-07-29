@@ -24,6 +24,9 @@ default: &default
 development:
   <<: *default
   database: task4_development
+  host: localhost
+  username: postgres
+  password: MyPassword
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -82,5 +85,5 @@ test:
 production:
   <<: *default
   database: task4_production
-  username: task4
+  username: postgres
   password: <%= ENV["TASK4_DATABASE_PASSWORD"] %>
