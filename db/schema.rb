@@ -12,29 +12,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_220_801_112_613) do
+ActiveRecord::Schema[7.0].define(version: 20_220_802_131_230) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
-  create_table 'products', force: :cascade do |t|
-    t.string 'name'
+  create_table 'brands', force: :cascade do |t|
+    t.string 'title'
+    t.string 'bytitle'
+    t.string 'img'
     t.string 'description'
-    t.decimal 'price'
-    t.string 'currency'
-    t.string 'comment'
-    t.bigint 'provider_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['provider_id'], name: 'index_products_on_provider_id'
-  end
-
-  create_table 'providers', force: :cascade do |t|
-    t.string 'name'
-    t.string 'phone'
-    t.string 'address'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key 'products', 'providers'
+  create_table 'products', force: :cascade do |t|
+    t.integer 'category_id'
+    t.integer 'brand_id'
+    t.string 'title'
+    t.string 'bytitile'
+    t.text 'content'
+    t.float 'price'
+    t.float 'old_price'
+    t.integer 'status'
+    t.string 'keywords'
+    t.string 'description'
+    t.string 'img', default: 'no_image.jpg'
+    t.integer 'hit', default: 0
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
 end
