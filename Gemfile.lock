@@ -83,6 +83,8 @@ GEM
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
+    breadcrumbs_on_rails (4.1.0)
+      railties (>= 5.0)
     builder (3.2.4)
     capybara (3.37.1)
       addressable
@@ -147,6 +149,8 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
     matrix (0.4.2)
+    meta-tags (2.17.0)
+      actionpack (>= 3.2.0, < 7.1)
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.16.2)
@@ -315,6 +319,7 @@ PLATFORMS
 DEPENDENCIES
   activestorage (~> 7.0, >= 7.0.3.1)
   bootstrap-sass (~> 3.4, >= 3.4.1)
+  breadcrumbs_on_rails
   capybara
   coffee-rails (~> 5.0)
   database_cleaner (~> 2.0, >= 2.0.1)
@@ -326,6 +331,7 @@ DEPENDENCIES
   json_spec (~> 1.1, >= 1.1.5)
   launchy (~> 2.5)
   listen
+  meta-tags
   oj
   oj_mimic_json
   pg (~> 1.1)
